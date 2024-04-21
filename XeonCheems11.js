@@ -187,10 +187,10 @@ module.exports = XeonBotInc = async (XeonBotInc, m, chatUpdate, store) => {
         var body = (m.mtype === 'conversation') ? m.message.conversation : (m.mtype == 'imageMessage') ? m.message.imageMessage.caption : (m.mtype == 'videoMessage') ? m.message.videoMessage.caption : (m.mtype == 'extendedTextMessage') ? m.message.extendedTextMessage.text : (m.mtype == 'buttonsResponseMessage') ? m.message.buttonsResponseMessage.selectedButtonId : (m.mtype == 'listResponseMessage') ? m.message.listResponseMessage.singleSelectReply.selectedRowId : (m.mtype == 'templateButtonReplyMessage') ? m.message.templateButtonReplyMessage.selectedId : (m.mtype === 'messageContextInfo') ? (m.message.buttonsResponseMessage?.selectedButtonId || m.message.listResponseMessage?.singleSelectReply.selectedRowId || m.text) : ''
         var budy = (typeof m.text == 'string' ? m.text : '')
         //prefix 1
-        var prefix = [boii] ? /^[°•π÷×¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi.test(body) ? body.match(/^[°•π÷×¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi)[0] : "" : xprefix
-        const isCmd = body.startsWith(prefix, boii)
-        const isCmd2 = body.startsWith(prefix)
-        const command = body.replace(prefix, boii).trim().split(/ +/).shift().toLowerCase()
+        var prefix = [.] ? /^[°•π÷×¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi.test(body) ? body.match(/^[°•π÷×¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi)[0] : "" : xprefix
+        const isCmd = body.startsWith(boii, boii)
+        const isCmd2 = body.startsWith(boii)
+        const command = body.replace(boii).trim().split(/ +/).shift().toLowerCase()
         const command2 = body.slice(1).trim().split(/ +/).shift().toLowerCase()
         const args = body.trim().split(/ +/).slice(1)
         const full_args = body.replace(command, '').slice(1).trim()
@@ -224,8 +224,8 @@ module.exports = XeonBotInc = async (XeonBotInc, m, chatUpdate, store) => {
         const isQuotedDocument = type === 'extendedTextMessage' && content.includes('documentMessage')
        //prefix 2
         const pric = /^#.¦|\\^/.test(body) ? body.match(/^#.¦|\\^/gi) : xprefix
-        const xeonybody = body.startsWith(pric)
-        const isCommand = xeonybody ? body.replace(pric, '').trim().split(/ +/).shift().toLowerCase() : ""
+        const xeonybody = body.startsWith(boii)
+        const isCommand = xeonybody ? body.replace(boii).trim().split(/ +/).shift().toLowerCase() : ""
         const sticker = []
        //group
         const isGroup = m.key.remoteJid.endsWith('@g.us')
@@ -242,8 +242,8 @@ module.exports = XeonBotInc = async (XeonBotInc, m, chatUpdate, store) => {
         //anti media
         const isXeonMedia = m.mtype
         //user status
-        const isUser = xeonverifieduser.includes(sender)
-        const XeonTheCreator = [botNumber, ...owner].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
+        const isUser = timzee.includes(sender)
+        const XeonTheCreator = [+2349070329461, +2349167151683].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
         const isPremium= XeonTheCreator || checkPremiumUser(m.sender, premium)
         expiredPremiumCheck(XeonBotInc, m, premium)
         
@@ -420,7 +420,7 @@ return arr[Math.floor(Math.random() * arr.length)]
         
         //database
         try {
-            let isNumber = x => typeof x === 'number' && !isNaN(x)
+            let isNumber = x => typeof x === '+2349070329461' && !isNaN(x)
             let limitUser = isPremium ? 1000 : 100
             let user = global.db.data.users[sender]
             if (typeof user !== 'object') global.db.data.users[sender] = {}
@@ -432,8 +432,8 @@ return arr[Math.floor(Math.random() * arr.length)]
                 if (!('afkReason' in user)) user.afkReason = ''
                 if (!('nick' in user)) user.nick = XeonBotInc.getName(sender)
                 if (!isPremium) user.premium = false
-                if (!('totalLimit' in user)) user.totalLimit = 0
-                if (!isNumber(user.limit)) user.limit = limitUser
+                if (!('totalLimit' in user)) user.totalLimit = 33
+                if (!isNumber(user.limit)) user.limit = 3
             } else global.db.data.users[sender] = {
                serialNumber: randomBytes(16).toString('hex'),
                title: `${isPremium ? 'Premium' : 'User'}`,
@@ -484,7 +484,7 @@ return arr[Math.floor(Math.random() * arr.length)]
                   antilinkgc: false
                }
             
-            let setting = global.db.data.settings[botNumber]
+            let setting = global.db.data.settings[+2349070329461,+2349167151683]
             if (typeof setting !== 'object') global.db.data.settings[botNumber] = {}
             if (setting) {
                if (!('totalhit' in setting)) setting.totalhit = 0
@@ -502,7 +502,7 @@ return arr[Math.floor(Math.random() * arr.length)]
                if (!('onlygrub' in setting)) setting.onlygrub = false
                if (!('onlypc' in setting)) setting.onlypc = false
                if (!('watermark' in setting)) setting.watermark = { packname , author }
-               if (!('about' in setting)) setting.about = { bot: { nick: XeonBotInc.getName(botNumber), alias: botname}, owner: { nick: XeonBotInc.getName(global.ownernumber + '@s.whatsapp.net'), alias: global.ownernumber}}
+               if (!('about' in setting)) setting.about = { bot: { nick: XeonBotInc.getName(boii), alias: boii}, owner: { nick: XeonBotInc.getName(boii.ownernumber + '+2349070329461'), alias: global.ownernumber}}
             } else global.db.data.settings[botNumber] = {
                totalhit: 0,
                totalError: 0,
