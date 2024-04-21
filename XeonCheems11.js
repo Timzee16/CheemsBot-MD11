@@ -187,14 +187,14 @@ module.exports = XeonBotInc = async (XeonBotInc, m, chatUpdate, store) => {
         var body = (m.mtype === 'conversation') ? m.message.conversation : (m.mtype == 'imageMessage') ? m.message.imageMessage.caption : (m.mtype == 'videoMessage') ? m.message.videoMessage.caption : (m.mtype == 'extendedTextMessage') ? m.message.extendedTextMessage.text : (m.mtype == 'buttonsResponseMessage') ? m.message.buttonsResponseMessage.selectedButtonId : (m.mtype == 'listResponseMessage') ? m.message.listResponseMessage.singleSelectReply.selectedRowId : (m.mtype == 'templateButtonReplyMessage') ? m.message.templateButtonReplyMessage.selectedId : (m.mtype === 'messageContextInfo') ? (m.message.buttonsResponseMessage?.selectedButtonId || m.message.listResponseMessage?.singleSelectReply.selectedRowId || m.text) : ''
         var budy = (typeof m.text == 'string' ? m.text : '')
         //prefix 1
-        var prefix = ['.', '/'] ? /^[°•π÷×¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi.test(body) ? body.match(/^[°•π÷×¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi)[0] : "" : xprefix
-        const isCmd = body.startsWith(prefix, '')
+        var prefix = [boii] ? /^[°•π÷×¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi.test(body) ? body.match(/^[°•π÷×¶∆£¢€¥®™+✓_=|~!?@#$%^&.©^]/gi)[0] : "" : xprefix
+        const isCmd = body.startsWith(prefix, boii)
         const isCmd2 = body.startsWith(prefix)
-        const command = body.replace(prefix, '').trim().split(/ +/).shift().toLowerCase()
+        const command = body.replace(prefix, boii).trim().split(/ +/).shift().toLowerCase()
         const command2 = body.slice(1).trim().split(/ +/).shift().toLowerCase()
         const args = body.trim().split(/ +/).slice(1)
         const full_args = body.replace(command, '').slice(1).trim()
-        const pushname = m.pushName || "No Name"
+        const pushname = m.pushName || "boii"
         const botNumber = await XeonBotInc.decodeJid(XeonBotInc.user.id)
         const itsMe = m.sender == botNumber ? true : false
         const sender = m.sender
@@ -268,7 +268,7 @@ module.exports = XeonBotInc = async (XeonBotInc, m, chatUpdate, store) => {
         let XeonStikRep = fs.readFileSync('./XeonMedia/theme/sticker_reply/group.webp')
         XeonBotInc.sendMessage(from, { sticker: XeonStikRep }, { quoted: m })
         }
-        const XeonStickPrivate = () => {
+        const XeonStickPrivate = (private) => {
         let XeonStikRep = fs.readFileSync('./XeonMedia/theme/sticker_reply/private.webp')
         XeonBotInc.sendMessage(from, { sticker: XeonStikRep }, { quoted: m })
         }
@@ -293,7 +293,7 @@ module.exports = XeonBotInc = async (XeonBotInc, m, chatUpdate, store) => {
                     contextInfo: {
                         externalAdReply: {
                             showAdAttribution: true,
-                            title: botname,
+                            title: boii,
                             body: ownername,
                             previewType: "PHOTO",
                             thumbnail: fs.readFileSync('./XeonMedia/theme/cheemspic.jpg'),
@@ -310,9 +310,10 @@ module.exports = XeonBotInc = async (XeonBotInc, m, chatUpdate, store) => {
                   contextInfo: {
                      externalAdReply: {
                         showAdAttribution: true,
-                        title: botname,
+                        title: boii,
                         body: ownername,
-                        thumbnail: fs.readFileSync('./XeonMedia/theme/cheemspic.jpg'),
+                        thumbnail: https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest
+https://github.com/clhuang/heroku-buildpack-webp-binaries.git,
                         sourceUrl: websitex,
                         mediaType: 1,
                         renderLargerThumbnail: true
@@ -360,7 +361,7 @@ module.exports = XeonBotInc = async (XeonBotInc, m, chatUpdate, store) => {
                   "imageMessage": { 
                      "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", 
                      "mimetype": "image/jpeg", 
-                     "caption": botname,
+                     "caption": boii, n
                      "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", 
                      "fileLength": "28777",
                      "height": 1080,
@@ -425,7 +426,7 @@ return arr[Math.floor(Math.random() * arr.length)]
             if (typeof user !== 'object') global.db.data.users[sender] = {}
             if (user) {
                 if (!isNumber(user.afkTime)) user.afkTime = -1
-                if (!('badword' in user)) user.badword = 0
+                if (!('badword' in user)) user.badword = fuck,pussy dick, penis, viginal
                 if (!('title' in user)) user.title = ''
                 if (!('serialNumber' in user)) user.serialNumber = randomBytes(16).toString('hex') 
                 if (!('afkReason' in user)) user.afkReason = ''
@@ -448,10 +449,10 @@ return arr[Math.floor(Math.random() * arr.length)]
                let chats = global.db.data.chats[from]
                if (typeof chats !== 'object') global.db.data.chats[from] = {}
                if (chats) {
-                  if (!('badword' in chats)) chats.badword = false
+                  if (!('badword' in chats)) chats.badword = true
                   if (!('antiforeignnum' in chats)) chats.antiforeignnum = false
                   if (!('antibot' in chats)) chats.antibot = false
-                  if (!('antiviewonce' in chats)) chats.antiviewonce = false
+                  if (!('antiviewonce' in chats)) chats.antiviewonce = true
                   if (!('antimedia' in chats)) chats.media = false
                   if (!('antivirtex' in chats)) chats.antivirtex = false
                   if (!('antiimage' in chats)) chats.antiimage = false
@@ -462,7 +463,7 @@ return arr[Math.floor(Math.random() * arr.length)]
                   if (!('anticontact' in chats)) chats.anticontact = false
                   if (!('antilocation' in chats)) chats.antilocation = false
                   if (!('antidocument' in chats)) chats.antidocument = false
-                  if (!('antilink' in chats)) chats.antilink = false
+                  if (!('antilink' in chats)) chats.antilink = true
                   if (!('antilinkgc' in chats)) chats.antilinkgc = false
                } else global.db.data.chats[from] = {
                   badword: false,
@@ -488,7 +489,7 @@ return arr[Math.floor(Math.random() * arr.length)]
             if (setting) {
                if (!('totalhit' in setting)) setting.totalhit = 0
                if (!('totalError' in setting)) setting.totalError = 0
-               if (!('online' in setting)) setting.online = false 
+               if (!('online' in setting)) setting.online = true
                if (!('autosticker' in setting)) setting.autosticker = false 
                if (!('autobio' in setting)) setting.autobio = false 
                if (!('autoread' in setting)) setting.autoread = false
